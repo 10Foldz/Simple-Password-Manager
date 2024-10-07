@@ -34,9 +34,11 @@ def save_password():
         shift_entry.delete(0, tk.END)
         description_entry.delete(0, tk.END)
         result_entry.delete(0, tk.END)
+        
+        # Reload password list
+        display_passwords()
     else:
         messagebox.showwarning("Error", "Field cannot be empty.")
-
 
 def load_passwords():
     if os.path.exists("passwords.bin"):
@@ -117,6 +119,7 @@ def copy_from_listbox():
 root = tk.Tk()
 root.title("Password Manager")
 
+# Left side frame
 left_frame = tk.Frame(root)
 left_frame.pack(side=tk.LEFT, padx=10, pady=10)
 
@@ -159,11 +162,9 @@ copy_button.pack(pady=10)
 save_button = tk.Button(left_frame, text="Save Password", command=save_password)
 save_button.pack(pady=10)
 
+# Right side frame
 right_frame = tk.Frame(root)
 right_frame.pack(side=tk.RIGHT, padx=10, pady=10)
-
-load_button = tk.Button(right_frame, text="Load Passwords", command=display_passwords)
-load_button.pack(pady=10)
 
 password_listbox = tk.Listbox(right_frame, width=40)
 password_listbox.pack(pady=5)
@@ -176,5 +177,8 @@ edit_button.pack(pady=5)
 
 delete_button = tk.Button(right_frame, text="Delete Selected Password", command=delete_password)
 delete_button.pack(pady=5)
+
+# Load passwords when the program starts
+display_passwords()
 
 root.mainloop()
