@@ -148,7 +148,7 @@ password_frame.grid(row=1, column=0, columnspan=2, sticky="we", pady=5)
 password_entry = ttk.Entry(password_frame, show="*", width=30)
 password_entry.pack(side=tk.LEFT, expand=True, fill=tk.X)
 toggle_button = ttk.Button(password_frame, text="Show", command=toggle_password_visibility, width=10)
-toggle_button.pack(side=tk.RIGHT)
+toggle_button.pack(side=tk.RIGHT, padx=(5, 0))
 
 ttk.Label(input_frame, text="Enter Shift (Caesar Cipher):").grid(row=2, column=0, sticky="w", pady=5)
 shift_entry = ttk.Entry(input_frame, width=10)
