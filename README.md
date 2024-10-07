@@ -22,3 +22,7 @@ To run this project, you'll need to install the following Python libraries:
 Install the dependencies using pip:
 ```bash
 pip install ttkthemes pyperclip
+```
+
+## Preview Image
+![Preview](https://github.com/user-attachments/assets/af76d50f-cdaf-4ca4-8057-23475741c260)
